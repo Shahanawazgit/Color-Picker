@@ -13,4 +13,13 @@ const copyButton = document.getElementById("copy");
 copyButton.onclick = () => {
   const x = display.innerHTML;
   navigator.clipboard.writeText(x);
+
+  const tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = `Copied: ${x}`;
+  display.innerHTML = "";
+};
+
+copyButton.onmouseout = () => {
+  const tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
 };
